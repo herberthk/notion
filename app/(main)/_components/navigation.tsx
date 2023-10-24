@@ -9,6 +9,7 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
+import Link from "next/link";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import type { ElementRef } from "react";
 import React from "react";
@@ -16,6 +17,7 @@ import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { useMediaQuery } from "usehooks-ts";
 
+import { Logo } from "@/app/(home)/_components/logo";
 import {
   Popover,
   PopoverContent,
@@ -158,6 +160,12 @@ export const Navigation = (): React.JSX.Element => {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
+          <div className="mt-2 ml-4">
+            <Link href="/documents">
+              <Logo />
+            </Link>
+          </div>
+
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
